@@ -9,17 +9,25 @@ import android.view.View;
 import com.inno.ilyadmt.students.R;
 
 /**
- * Created by mjazz on 20.06.2017.
+ * Created by mjazz on 26.06.2017.
  */
 
-public class HelloActivity extends Activity {
+public class AdminMainActivity extends Activity{
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hello);
+        setContentView(R.layout.activity_administration_main);
     }
 
-    public void logout(View view) {
-        startActivity(new Intent(this, LoginActivity.class));
+
+    public void getJournalsList(View view) {
+    }
+
+    public void getGroupsList(View view) {
+    }
+
+    public void getStudentsList(View view) {
+        startActivity(new Intent(this, StudentListActivity.class));
     }
 }

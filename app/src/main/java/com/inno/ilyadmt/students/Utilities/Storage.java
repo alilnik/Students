@@ -1,4 +1,6 @@
-package com.inno.ilyadmt.students.Activities;
+package com.inno.ilyadmt.students.Utilities;
+
+import android.util.Pair;
 
 import java.util.HashMap;
 
@@ -7,7 +9,7 @@ import java.util.HashMap;
  */
 
 public class Storage {
-    public HashMap<String, String> internalStorage = new HashMap<>();
+    public HashMap<String, Pair<String, ROLES>> internalStorage = new HashMap<>();
 
     private static final Storage ourInstance = new Storage();
 

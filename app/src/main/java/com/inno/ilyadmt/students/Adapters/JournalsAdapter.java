@@ -7,14 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.inno.ilyadmt.students.Models.Group;
 import com.inno.ilyadmt.students.Models.Journal;
-import com.inno.ilyadmt.students.Models.Lesson;
 import com.inno.ilyadmt.students.Models.Student;
 import com.inno.ilyadmt.students.R;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +43,7 @@ public class JournalsAdapter extends RecyclerView.Adapter<JournalsAdapter.MyView
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.journal_list_row, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_journal_list_row, parent, false);
         return  new MyViewHolder(itemView);
     }
 
