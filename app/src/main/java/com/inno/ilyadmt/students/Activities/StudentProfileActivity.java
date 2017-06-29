@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.inno.ilyadmt.students.Adapters.ContactsAdapter;
 import com.inno.ilyadmt.students.Adapters.JournalsAdapter;
@@ -39,9 +40,13 @@ public class StudentProfileActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         fillContacts();
         fillJournals();
         setContentView(R.layout.activity_student_profile);
+        ((TextView)findViewById(R.id.stud_prof_name)).setText(getIntent().getExtras().getString("name"));
+        ((TextView)findViewById(R.id.stud_prof_surname)).setText(getIntent().getExtras().getString("surname"));
+        ((TextView)findViewById(R.id.stud_prof_secname)).setText(getIntent().getExtras().getString("secname"));
 
         recyclerViewContacts = (RecyclerView) findViewById(R.id.contacts_recycle);
         contactsAdapter = new ContactsAdapter(contactList);

@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 //        startActivity(new Intent( this, StudentProfileActivity.class));
         storage = Storage.getInstance();
         storage.internalStorage.put("1", new Pair<String, ROLES>("1", ROLES.ADMIN));
+        storage.internalStorage.put("2", new Pair<String, ROLES>("2", ROLES.USER));
     }
 
     public void register(View view) {
@@ -39,7 +40,11 @@ public class LoginActivity extends AppCompatActivity {
 
         if((role = checkPassword(login, pwd))!=null){
             if(role.equals(ROLES.USER)){
-                startActivity(new Intent(this, StudentProfileActivity.class));
+                Intent intent = new Intent(this, StudentProfileActivity.class);
+                intent.putExtra("name", "John");
+                intent.putExtra("surname", "Doe");
+                intent.putExtra("secname", "Doe");
+                startActivity(intent);
             }
             else startActivity(new Intent(this, AdminMainActivity.class));
 
